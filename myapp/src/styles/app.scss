@@ -1,0 +1,100 @@
+$main-color: steelBlue;
+
+%button-style {
+    background: $main-color;
+    border-radius: 5px;
+    color: white;
+}
+
+@mixin main-wrappers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    @include main-wrappers
+}
+
+main {
+
+    @include main-wrappers
+}
+
+.list-p {
+    margin-left: 10px;
+
+}
+
+.list-div {
+    border: 1px solid black;
+    width: 970px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin: 8px;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+.list-checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.header-div {
+    width: 1000px;
+    border: 1px solid black;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@mixin mymixin {
+    width: 950px;
+    height: 40px;
+}
+
+.header-div {
+    button {
+        @include mymixin;
+        @extend %button-style
+    }
+
+    input {
+        @include mymixin;
+        margin-top: 20px;
+        padding-left: 10px
+    }
+}
+
+.del-btn {
+    background-color: red;
+    @extend %button-style;
+    width: 480px;
+    height: 40px;
+    margin: 10px;
+}
+
+section {
+    button {
+        width: 310px;
+        margin: 15px;
+        height: 40px;
+        @extend %button-style
+    }
+
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.main-div {
+    margin-top: 25px;
+     margin-bottom: 25px;
+}
+
+.bttn-div{
+    display: flex;
+    justify-content: center;
+}
